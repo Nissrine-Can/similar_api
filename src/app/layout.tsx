@@ -2,7 +2,7 @@ import '@/styles/globals.css'
 import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
 const inter = Inter({ subsets: ['latin'] })
-
+import Providers from '@/components/Providers'
 
 export default function RootLayout({
   children,
