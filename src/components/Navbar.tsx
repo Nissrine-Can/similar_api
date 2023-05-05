@@ -1,13 +1,14 @@
 import { getServerSession } from 'next-auth'
 import Link from 'next/link'
-import { FC } from 'react'
-import { buttonVariants } from './ui/Button'
 
-interface NavbarProps {
-  
-}
+import { buttonVariants } from '@/ui/Button'
+import SignInButton from '@/components/SignInButton'
+import SignOutButton from '@/components/SingOutButton'
 
-const Navbar = async ({}) => {
+
+
+
+const Navbar = async () => {
   const session = await getServerSession()
 
   return (
@@ -18,18 +19,18 @@ const Navbar = async ({}) => {
         </Link>
 
         <div className='md:hidden'>
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
         </div>
 
         <div className='hidden md:flex gap-4'>
-          <ThemeToggle />
-          <Link href='/documentation' className={buttonVariants({variants: 'ghost'})}>
+          {/* <ThemeToggle /> */}
+          <Link href='/documentation' className={buttonVariants({variant: 'ghost'})}>
             Documentation
           </Link>
 
           {session? (
             <>
-              <Link className={buttonVariants({variants: 'ghost'})}
+              <Link className={buttonVariants({variant: 'ghost'})}
               href='/dashboard'>
                   Dashboard
               </Link>
